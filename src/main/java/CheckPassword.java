@@ -45,7 +45,7 @@ public class CheckPassword {
      * ********************************************************************************************/
 
     /**
-     * Solicits two strings from the user and print if they are anagrams.
+     * Solicits a password from the user and checks it using static rules.
      * <p>
      * You are free to review this function, but should not modify it. Note that this function is
      * not tested by the test suite, as it is purely to aid your own interactive testing.
