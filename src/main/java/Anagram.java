@@ -40,16 +40,28 @@ public class Anagram {
      */
     public static boolean areStrictAnagrams(final String first, final String second) {
         boolean out = false;
+        String same = "";
+        int count = 0;
+        if (first == null || second == null) {
+            return false;
+        }
         char[] one = stringToAnagramArray(first);
         char[] two = stringToAnagramArray(second);
-        if (one.length >= two.length) {
-
+        if (one.length == two.length) {
+            for (int j = 0; j < one.length; j++) {
+                if (one[j] == two[j]) {
+                    count++;
+                }
+            }
+        } else {
+            return false;
         }
-        else {
-
+        if (count == one.length) {
+            out = true;
         }
         return out;
     }
+
 
     /**
      * Helper function for areStrictAnagrams.

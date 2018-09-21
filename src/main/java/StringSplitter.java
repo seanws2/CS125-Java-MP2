@@ -6,10 +6,21 @@ import java.util.Scanner;
  * <p>
  * The provided code is incomplete. Modify it so that it works properly and passes the tests in
  * <code>StringSplitterTest.java</code>.
- *
  * @see <a href="https://cs125.cs.illinois.edu/MP/2/">MP2 Documentation</a>
  */
 public class StringSplitter {
+    /**
+     * function that splits the string
+     * @param split string input
+     * @return out split string
+     */
+    public static char[] stringSplitter(final String split) {
+        char[] out = {'s','d','s'};
+        return out;
+    }
+
+
+
 
     /* ********************************************************************************************
      * You do not need to modify code below this comment.
