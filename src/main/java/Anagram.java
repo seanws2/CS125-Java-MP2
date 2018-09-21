@@ -35,9 +35,20 @@ public class Anagram {
      *
      * @param first the first string to use for the anagram comparison
      * @param second the second string to use for the anagram comparison
+     * @return out the boolean output
      * @see <a href="https://www.vocabulary.com/dictionary/anagram">Definition of anagram</a>
      */
     public static boolean areStrictAnagrams(final String first, final String second) {
+        boolean out = false;
+        char[] one = stringToAnagramArray(first);
+        char[] two = stringToAnagramArray(second);
+        if (one.length >= two.length) {
+
+        }
+        else {
+
+        }
+        return out;
     }
 
     /**
