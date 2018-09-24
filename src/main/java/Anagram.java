@@ -39,8 +39,7 @@ public class Anagram {
      * @see <a href="https://www.vocabulary.com/dictionary/anagram">Definition of anagram</a>
      */
     public static boolean areStrictAnagrams(final String first, final String second) {
-        boolean out = false;
-        String same = "";
+        boolean output = false;
         int count = 0;
         if (first == null || second == null) {
             return false;
@@ -57,9 +56,9 @@ public class Anagram {
             return false;
         }
         if (count == one.length) {
-            out = true;
+            output = true;
         }
-        return out;
+        return output;
     }
 
 
