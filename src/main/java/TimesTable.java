@@ -1,7 +1,6 @@
-import java.util.Scanner;
 
 /**
- * A class that splits a string on character change boundaries.
+ * A class that generates a times table.
  * <p>
  * The provided code is incomplete. Modify it so that it works properly and passes the tests in
  * <code>StringSplitterTest.java</code>.
@@ -9,26 +8,25 @@ import java.util.Scanner;
  */
 public class TimesTable {
     /**
-     * function that forms table.
-     * @param first int 1
-     * @param second int 2
-     * @return out split string
+     * function that generates a 2d array times table.
+     * @param first integer lower bound
+     * @param second integer upper bound
+     * @return timesTable which is a 2d array
      */
-    static int[][]	generateTimesTable(final int first, final int second) {
-        return null;
+    public static int[][] generateTimesTable(final int first, final int second) {
+        if (first <= 0 || second <= 0 || second <= first) {
+            return null;
+        }
+        int i;
+        int j;
+        int row = second - first + 2;
+        int[][] table = new int[row][row];
+        table[0][0] = 0;
+        for (i = 1; i < row; i++) {
+            for (j = 1; j < row; j++) {
+                table[i][j] = table[i][0] * table[0][j];
+            }
+        }
+        return table;
     }
-    /**
-     * Solicit a string and split it whenever the character changes.
-     * <p>
-     * You are free to review this function, but should not modify it. Note that this function is
-     * not tested by the test suite, as it is purely to aid your own interactive testing.
-     *
-     * @param unused unused input arguments
-     */
-    static void	main(java.lang.String[] unused) {
-        Scanner lineScanner = new Scanner(System.in);
-        System.out.println("Enter a string: ");
-        String first = lineScanner.nextLine();
-    }
-
 }

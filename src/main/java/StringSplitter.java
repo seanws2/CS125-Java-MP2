@@ -1,6 +1,5 @@
-import java.util.Arrays;
 import java.util.Scanner;
-
+import java.util.Arrays;
 /**
  * A class that splits a string on character change boundaries.
  * <p>
@@ -10,12 +9,46 @@ import java.util.Scanner;
  */
 public class StringSplitter {
     /**
-     * function that splits the string
+     * function that splits the string.
      * @param split string input
      * @return out split string
      */
-    public static char[] stringSplitter(final String split) {
-        char[] out = {'s','d','s'};
+    public static String[] stringSplitter(final String split) {
+        if (split == null) {
+            return null;
+        }
+        int count = 1;
+        int i = 1;
+        while (i < split.length()) {
+            int j = i - 1;
+            if (split.charAt(i) != split.charAt(j)) {
+                count++;
+            }
+            i++;
+        }
+        int spot = 0;
+        String[] out = new String[0];
+        if (split.length() == 0) {
+            return out;
+        }
+        out = new String[count];
+        out[spot] = Character.toString(split.charAt(0));
+        i = 1;
+        boolean firstTimeCheck = true;
+        while (i < split.length()) {
+            int j = i - 1;
+            if (split.charAt(i) == split.charAt(j)) {
+                out[spot] = out[spot] + Character.toString(split.charAt(i));
+            } else {
+                spot++;
+                if (firstTimeCheck) {
+                    out[spot] = Character.toString(split.charAt(i));
+                } else {
+                    out[spot] = out[spot] + Character.toString(split.charAt(i));
+                }
+            }
+            i++;
+        }
         return out;
     }
 

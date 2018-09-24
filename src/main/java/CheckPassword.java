@@ -32,15 +32,36 @@ public class CheckPassword {
      * <p>
      * The passed password string may be empty but will not be null.
      *
-     * @param password the password to check
-     * @param minLength the minimum length for the password
-     * @param minCapitalLetter the minimum number of capital letters the password must contain
-     * @param minNumber the minimum number of numbers that the password must contain
-     * @param minSpecial the minimum number of special characters that the password must contain
+     * @param password string to check
+     * @param minLength minimum number of characters
+     * @param minCapitalLetter minimum number of uppercase letters
+     * @param minNumber minimum number of numbers
+     * @param minSpecial minimum number of special characters
      * @return true if the password follows the rules, false otherwise
      */
-    public static boolean checkAPassword(final String password, final int minLength, final int minCapitalLetter, final int minNumber, final int minSpecial) {
-        return true;
+    public static boolean checkAPassword(final String password, final int minLength, final int minCapitalLetter,
+                                         final int minNumber, final int minSpecial) {
+        boolean out = true;
+        int length = password.length();
+        int upper = 0;
+        int num = 0;
+        int special = 0;
+        for (int i = 0; i < password.length(); i++) {
+            if (SPECIAL.contains(Character.toString(password.charAt(i)))) {
+                special++;
+            }
+            if (NUMBERS.contains(Character.toString(password.charAt(i)))) {
+                num++;
+            }
+            if (CAPITAL_LETTERS.contains(Character.toString(password.charAt(i)))) {
+                upper++;
+            }
+        }
+        if (length < minLength || special < minSpecial || num < minNumber || upper < minCapitalLetter) {
+            out = false;
+        }
+        return out;
+
     }
 
     /* ********************************************************************************************
